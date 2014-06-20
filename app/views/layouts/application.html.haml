@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title Styrk Mongoid
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+
+    - if user_signed_in?
+      = current_user.email
+      = current_user.points
+      = link_to "Logout", destroy_user_session_url
+      %ul
+        Badges:
+        - current_user.badges.each do |badge|
+          %li= badge.name
+    - else
+      = link_to "Sign up", new_user_registration_url
+      = link_to "Sign in", new_user_session_url
+
+    = yield

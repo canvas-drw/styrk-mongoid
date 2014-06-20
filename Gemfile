@@ -30,6 +30,11 @@ gem 'spring',        group: :development
 
 gem 'merit', github: 'canvas-drw/merit'
 
+gem 'haml-rails'
+
+gem 'devise'
+gem 'high_voltage'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
