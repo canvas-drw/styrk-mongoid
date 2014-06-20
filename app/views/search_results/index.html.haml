@@ -1,0 +1,10 @@
+%h1 Search Results
+.row
+  - @results.each do |result|
+    .row
+      .media
+        .media-body
+          %h4.media-heading
+            = link_to result.title, post_url(result)
+          = result.content.html_safe
+  = paginate @results

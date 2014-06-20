@@ -35,6 +35,9 @@ gem 'haml-rails'
 gem 'devise'
 gem 'high_voltage'
 
+gem 'searchkick'
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
