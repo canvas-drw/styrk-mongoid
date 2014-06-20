@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/canvas-drw/merit.git
+  revision: 3a2a79ed90d2797dde183fa85382f42fdbc132d3
+  specs:
+    merit (2.1.1)
+      ambry (~> 0.3.0)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: 1fcb8721b0222ad4de7677f69fbf543a3f75b5f4
   specs:
@@ -37,6 +44,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ambry (0.3.1)
     arel (5.0.1.20140414130214)
     bson (2.3.0)
     bson_ext (1.5.1)
@@ -135,6 +143,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  merit!
   mongoid!
   rails (= 4.1.0)
   sass-rails (~> 4.0.3)
