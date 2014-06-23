@@ -20,7 +20,7 @@
           <%- if current_user.voted?(post) %>
             up
           <% else %>
-            <%= link_to "up", vote_post_path(post, type: :up), method: "post" %>
+            <%= link_to "up", vote_up_post_path(post), method: "post" %>
           <% end %>
         </td>
         <td>
@@ -28,7 +28,7 @@
           <%- if current_user.voted?(post) %>
             down
           <% else %>
-            <%= link_to "down", vote_post_path(post, type: :down), method: "post" %>
+            <%= link_to "down", vote_down_post_path(post), method: "post" %>
           <% end %>
         </td>
         <td><%= post.title %></td>

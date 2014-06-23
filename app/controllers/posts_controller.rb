@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote_up, :vote_down]
 
   # GET /posts
   # GET /posts.json
@@ -64,13 +64,13 @@ class PostsController < ApplicationController
     end
   end
 
-  def vote
-    if params[:type] == "up"
-      @post.user.add_points(1, category: 'Up Vote')
-    else
-      @post.user.subtract_points(1, category: 'Down Vote')
-    end
-    @post.vote(:voter => current_user, :value => params[:type])
+  def vote_up
+    @post.vote(voter: current_user, value: :up) # voteable_mongo
+    redirect_to :back, notice: "Thank you for voting!"
+  end
+
+  def vote_down
+    @post.vote(voter: current_user, value: :down) # voteable_mongo
     redirect_to :back, notice: "Thank you for voting!"
   end
 

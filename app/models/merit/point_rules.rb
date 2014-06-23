@@ -27,6 +27,9 @@ module Merit
       score 10, to: :user, on: 'posts#create', category: 'post_activity' do |post|
         post.valid?
       end
+
+      score 1, to: :user, on: 'posts#vote_up', category: 'vote_activity'
+      score -1, to: :user, on: 'posts#vote_down', category: 'vote_activity'
     end
   end
 end
