@@ -25,10 +25,8 @@ module Merit
       # ]
 
       score 10, to: :user, on: 'posts#create', category: 'post_activity' do |post|
-        post.title.present?
+        post.valid?
       end
-
-      score 1, to: [:post, :user], on: 'posts#vote_up', category: 'up_vote_activity'
     end
   end
 end

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /posts
   # GET /posts.json
@@ -62,6 +62,16 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    if params[:type] == "up"
+      @post.user.add_points(1, category: 'Up Vote')
+    else
+      @post.user.subtract_points(1, category: 'Down Vote')
+    end
+    @post.vote(:voter => current_user, :value => params[:type])
+    redirect_to :back, notice: "Thank you for voting!"
   end
 
   private

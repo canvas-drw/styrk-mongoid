@@ -29,6 +29,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'merit', github: 'canvas-drw/merit'
+gem 'rs_voteable_mongo'
 
 gem 'haml-rails'
 
@@ -37,6 +38,10 @@ gem 'high_voltage'
 
 gem 'searchkick'
 gem 'kaminari'
+
+group :development do
+  gem 'better_errors'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

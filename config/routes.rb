@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get '/search' => 'search_results#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :posts
+  resources :posts do
+    member { post :vote }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
