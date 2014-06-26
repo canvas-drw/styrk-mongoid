@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.1'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
@@ -38,6 +38,8 @@ gem 'high_voltage'
 
 gem 'searchkick'
 gem 'kaminari'
+
+gem 'mongoid_slug'
 
 group :development do
   gem 'better_errors'

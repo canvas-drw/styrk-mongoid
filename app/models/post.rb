@@ -2,9 +2,11 @@ class Post
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongo::Voteable
+  include Mongoid::Slug
 
   field :title, type: String
   field :content, type: String
+  slug :title, history: true
 
   searchkick
 
